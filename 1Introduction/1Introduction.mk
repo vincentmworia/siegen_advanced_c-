@@ -64,7 +64,7 @@ AS       := C:/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/1main.cpp$(ObjectSuffix) $(IntermediateDirectory)/2Birthday.cpp$(ObjectSuffix) 
 
 
 
@@ -95,10 +95,15 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/Cplusplus/Siegenwork/Siegenwork/1Introduction/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+$(IntermediateDirectory)/1main.cpp$(ObjectSuffix): 1main.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/Cplusplus/Siegenwork/Siegenwork/1Introduction/1main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/1main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/1main.cpp$(PreprocessSuffix): 1main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/1main.cpp$(PreprocessSuffix) 1main.cpp
+
+$(IntermediateDirectory)/2Birthday.cpp$(ObjectSuffix): 2Birthday.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/Cplusplus/Siegenwork/Siegenwork/1Introduction/2Birthday.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/2Birthday.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/2Birthday.cpp$(PreprocessSuffix): 2Birthday.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/2Birthday.cpp$(PreprocessSuffix) 2Birthday.cpp
 
 ##
 ## Clean
